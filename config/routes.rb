@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post 'users', to: 'users#create'
 
+  get 'posts', to: 'posts#index'
+
   get 'posts/new', to: 'posts#new'
 
   get 'posts/:id', to: 'posts#show', as: :post

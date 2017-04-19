@@ -3,3 +3,9 @@
 <h3>Your Posts</h3>
 
 
+<% @posts.each do |post| %>
+    <em><%= post.title %></em><br>
+    <%= post.content %><br>
+    <%= post.created_at %><br><br>
+<% end %>
+
