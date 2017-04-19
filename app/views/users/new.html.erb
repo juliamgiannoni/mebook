@@ -1,3 +1,5 @@
+<h2>Add or update user profile data!</h2><br>
+
 <%= form_for @user, url: users_path, html: { multipart: true } do |form| %>
     <%= form.label :first_name %>
     <%= form.text_field :first_name %><br>
@@ -5,7 +7,7 @@
     <%= form.label :last_name %>
     <%= form.text_field :last_name %><br>
 
-    <%= form.file_field :image %><br><br>
+    <%= form.file_field :image %><br>
 
     <%= form.submit 'Done' %>
 
