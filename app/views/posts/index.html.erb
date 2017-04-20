@@ -1,4 +1,8 @@
 <div class="container text-center">
+<% if !User.exists? %>
+    <% Post.delete_all %>
+<% end %>
+
 <%= form_for @post do |f| %>
   <%= f.text_field :content, placeholder: "What's on your mind?", size: 60 %>
   &nbsp;
@@ -7,9 +11,8 @@
 </div>
 
 <h2>Your Posts</h2><br>
-
-<% @posts.each do |post| %>
-    <%= post.content %><br>
-    <%= post.created_at.strftime("%B %d, %Y") %><br><br>
-<% end %>
+    <% @posts.each do |post| %>
+        <%= post.content %><br>
+        <%= post.created_at.strftime("%B %d, %Y") %><br><br>
+    <% end %>
 

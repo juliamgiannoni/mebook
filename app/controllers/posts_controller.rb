@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @posts = @posts.sort_by {|obj| obj.created_at }.reverse
-
+    $user = User.all
     @post = Post.new
 
   end

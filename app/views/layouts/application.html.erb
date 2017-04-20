@@ -20,8 +20,8 @@
             <a class="navbar-brand" href="/">MeBook</a>
         </div>
         <div class="navbar-header navbar-right collapse navbar-collapse">
-            <p class="navbar-text collapse navbar-collapse">Welcome, person</p>
-            <a href="/" ><%= image_tag "Photo1.png", {height: 50} %> </a>
+            <a href="/users/new" ><p class="navbar-text collapse navbar-collapse">Welcome<%if $user.exists?%>, <%= $user.last.first_name %><%end%></p>
+            <%if $user.exists?%><%= image_tag $user.last.image, {height: 50} %><%end%> </a>
         </div>
       </div>
     </nav>

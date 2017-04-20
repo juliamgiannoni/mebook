@@ -14,14 +14,10 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.save
-      redirect_to posts_path
+      redirect_to root_path
     else
       render :new
     end
-  end
-
-  def edit
-
   end
 
   private
