@@ -1,11 +1,15 @@
-<h1>MeBook</h1>
-<hr>
-<h3>Your Posts</h3>
+<div class="container text-center">
+<%= form_for @post do |f| %>
+  <%= f.text_field :content, placeholder: "What's on your mind?", size: 60 %>
+  &nbsp;
+  <%= f.submit 'Post', class: 'btn btn-info'%>
+<% end %>
+</div>
 
+<h2>Your Posts</h2><br>
 
 <% @posts.each do |post| %>
-    <em><%= post.title %></em><br>
     <%= post.content %><br>
-    <%= post.created_at %><br><br>
+    <%= post.created_at.strftime("%B %d, %Y") %><br><br>
 <% end %>
 

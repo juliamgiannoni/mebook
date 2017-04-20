@@ -2,9 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-  end
-
-  def new
+    @posts = @posts.sort_by {|obj| obj.created_at }.reverse
     @post = Post.new
   end
 
@@ -20,7 +18,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:content)
     end
 
 
