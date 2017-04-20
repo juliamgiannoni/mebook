@@ -6,7 +6,7 @@
 <%= form_for @post do |f| %>
   <%= f.text_field :content, placeholder: "What's on your mind?", size: 60 %>
   &nbsp;
-  <%= f.submit 'Post', class: 'btn btn-info' %>
+  <%= f.submit 'Post', class: 'btn btn-info', disabled: !User.exists? %>
 <% end %>
 </div>
 

@@ -9,15 +9,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.all
-    if User.exists?
       @post = Post.create(post_params)
       if @post.save
         redirect_to root_path
       else
         render :new
       end
-    end
 
   end
 
